@@ -16,7 +16,7 @@ A rule that runs through all of them: **the tool proposes, the person decides.**
 | [Git Note History](https://github.com/Rexxall/obsidian-git-history-view) | See how a note changed, and take back only the part you need. Selective restore, merge blocks from several versions, write-time checks, undo. Read-only Git. |
 | [AI Assistant Suite](https://github.com/Rexxall/obsidian-ai-assistant-suite) | AI proposes tags, properties, structure and a folder for a note; you review the whole note and apply only what you accept. |
 | [Polyglot Helper](https://github.com/Rexxall/obsidian-polyglot-helper) | Look a word up in several dictionaries at once, keep it as a study note, review it on a schedule. English and Japanese. |
-| [Video Summary](https://github.com/Rexxall/obsidian-video-summary-plugin) | Turn videos into searchable notes with timestamped sources, with a browser extension and your own n8n workflow. |
+| [Video Summary](https://github.com/Rexxall/obsidian-video-summary) | Turn videos into searchable notes with timestamped sources, with a browser extension and your own n8n workflow. |
 | [Japan Work Secretary](https://github.com/Rexxall/japan-work-secretary) | Shifts, wages and the 28-hour rule for part-time work in Japan, with incremental calendar sync. |
 | [AI Accounting](https://github.com/Rexxall/obsidian-ai-accounting) | A multi-currency ledger in Markdown. Review what the AI read from a receipt before it is saved. |
 | [Pass Countdown](https://github.com/Rexxall/obsidian-pass-countdown) | Count down multi-use passes: uses left, time left, pace, calendar reminders. |
