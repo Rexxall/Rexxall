@@ -1,35 +1,38 @@
-<p align="center"><img src="assets/banner.svg" alt="Rexxall — tools for reading, notes, and the chores around them" width="100%"></p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img src="assets/banner-light.svg" alt="Rex — tools for reading, notes, and the chores around them" width="100%">
+</picture>
 
-Hi, I'm Abduhelil (Rex). I studied clinical medicine, and I build the tools I use every day to read, write and keep track of things — mostly Obsidian plugins and one web app for reading papers. Each one started with something I did not want to do by hand again.
+I'm Rex. I studied clinical medicine and build the tools I use every day to read, write and keep track of things.
 
-A rule that runs through all of them: **the tool proposes, the person decides.** Nothing is written back to a note without a preview and a chance to undo.
+**The tool proposes, you decide:** every change is previewed first and can be undone.
 
-学过临床医学，现在做自己每天用的工具：读论文、整理笔记、记账、排班。每个工具都从一件“不想再手动做一遍”的事开始；共同的规矩是先预览、后写入、随时能撤销。
+## Obsidian plugins
 
-臨床医学を学び、今は自分が毎日使う道具を作っています。論文を読む、ノートを整える、家計簿、シフト管理。どれも「もう手作業ではやりたくない」ことから始まりました。共通のルールは、書き込む前に必ずプレビューし、いつでも取り消せること。
+| Plugin | What it does | Get it |
+|---|---|---|
+| **Git Note History** | Browse a note's Git history, compare any two versions and restore one paragraph or the whole note. | [Directory](https://community.obsidian.md/plugins/git-note-history) · [GitHub](https://github.com/Rexxall/obsidian-git-history-view) |
+| **AI Assistant Suite** | An AI suggests a title, tags, a folder and tidier text for a note; you apply only what you accept. | [Directory](https://community.obsidian.md/plugins/ai-assistant-suite) · [GitHub](https://github.com/Rexxall/obsidian-ai-assistant-suite) |
+| **Polyglot Helper** | Look up English and Japanese words in your notes and get a study card with meaning, reading, examples and audio. | [Directory](https://community.obsidian.md/plugins/polyglot-helper) · [GitHub](https://github.com/Rexxall/obsidian-polyglot-helper) |
+| **Video Summary** | Turn video links, recordings and transcripts into notes with a summary, a timestamped transcript and key points. | [Directory](https://community.obsidian.md/plugins/video-summary) · [GitHub](https://github.com/Rexxall/obsidian-video-summary) |
+| **Pass Countdown** | Count down a multi-use pass: uses left, time left, and the latest moment to start the next one. | [Directory](https://community.obsidian.md/plugins/pass-countdown) · [GitHub](https://github.com/Rexxall/obsidian-pass-countdown) |
+| **Japan Work Secretary** | Part-time shifts in Japan: pay by time band, a warning before the 28-hour student limit, calendar sync. | [GitHub](https://github.com/Rexxall/japan-work-secretary) |
+| **AI Accounting** | A multi-currency ledger in Markdown. The AI drafts entries from receipts; you check them before saving. | [GitHub](https://github.com/Rexxall/obsidian-ai-accounting) |
 
-## Projects
+AI features use your own key, with DeepSeek, Qwen, SiliconFlow, Kimi and Zhipu built in.
 
-| | What it does |
+## Web apps
+
+| App | What it does |
 |---|---|
-| [Noesis Paper Reader](https://github.com/Rexxall/noesis-paper-companion) · [live](https://rexxall.github.io/noesis-paper-companion/) | Read a paper in three passes — skeleton, close reading, recap — and come out able to explain it. Margin notes, citation cards, paragraph-aligned translation, a recap check that gives hints before answers. |
-| [Git Note History](https://github.com/Rexxall/obsidian-git-history-view) | See how a note changed, and take back only the part you need. Selective restore, merge blocks from several versions, write-time checks, undo. Read-only Git. |
-| [AI Assistant Suite](https://github.com/Rexxall/obsidian-ai-assistant-suite) | AI proposes tags, properties, structure and a folder for a note; you review the whole note and apply only what you accept. |
-| [Polyglot Helper](https://github.com/Rexxall/obsidian-polyglot-helper) | Look a word up in several dictionaries at once, keep it as a study note, review it on a schedule. English and Japanese. |
-| [Bunmyaku](https://github.com/Rexxall/bunmyaku-nihongo) | Turn any Japanese material into a local study desk: furigana reading, vocabulary, listening loops, exercises, and a tutor that only sees the current lesson. Content comes from course packs an agent can build. |
-| [Video Summary](https://github.com/Rexxall/obsidian-video-summary) | Turn videos into searchable notes with timestamped sources, with a browser extension and your own n8n workflow. |
-| [Japan Work Secretary](https://github.com/Rexxall/japan-work-secretary) | Shifts, wages and the 28-hour rule for part-time work in Japan, with incremental calendar sync. |
-| [AI Accounting](https://github.com/Rexxall/obsidian-ai-accounting) | A multi-currency ledger in Markdown. Review what the AI read from a receipt before it is saved. |
-| [Pass Countdown](https://github.com/Rexxall/obsidian-pass-countdown) | Count down multi-use passes: uses left, time left, pace, calendar reminders. |
-| [Evidence Inbox](https://github.com/Rexxall/obsidian-evidence-inbox) | Save public posts into Obsidian as source-backed notes. No login, no background sync. *(alpha)* |
+| [Noesis Paper Reader](https://github.com/Rexxall/noesis-paper-companion) · [open](https://rexxall.github.io/noesis-paper-companion/) | Read a paper in three passes and come out able to explain it. |
+| [Bunmyaku](https://github.com/Rexxall/bunmyaku-nihongo) | Turn any Japanese material into a local study desk. |
+| [Evidence Inbox](https://github.com/Rexxall/obsidian-evidence-inbox) | Save a public post into Obsidian with its text, images and source link. |
 
-## How I work
+## How I build
 
-- Start from the real chore, not from the feature list.
-- Keep data local and in plain files (Markdown, Git) so it outlives the tool.
-- Make writes safe: preview first, check the file again at write time, keep an undo.
-- Prefer one clear entry point over many.
+- Start from a real chore.
+- Keep data local, in Markdown and Git.
+- Follow the host app's theme.
 
-## Languages
-
-Chinese, Uyghur, English, Japanese.
+Languages: Chinese, Uyghur, English, Japanese.
