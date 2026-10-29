@@ -16,8 +16,8 @@ I'm Rex. I studied clinical medicine and build the tools I use every day to read
 | **Polyglot Helper** | Look up English and Japanese words in your notes and get a study card with meaning, reading, examples and audio. | [Directory](https://community.obsidian.md/plugins/polyglot-helper) · [GitHub](https://github.com/Rexxall/obsidian-polyglot-helper) |
 | **Video Summary** | Turn video links, recordings and transcripts into notes with a summary, a timestamped transcript and key points. | [Directory](https://community.obsidian.md/plugins/video-summary) · [GitHub](https://github.com/Rexxall/obsidian-video-summary) |
 | **Pass Countdown** | Count down a multi-use pass: uses left, time left, and the latest moment to start the next one. | [Directory](https://community.obsidian.md/plugins/pass-countdown) · [GitHub](https://github.com/Rexxall/obsidian-pass-countdown) |
-| **Japan Work Secretary** | Part-time shifts in Japan: pay by time band, a warning before the 28-hour student limit, calendar sync. | [GitHub](https://github.com/Rexxall/japan-work-secretary) |
-| **AI Accounting** | A multi-currency ledger in Markdown. The AI drafts entries from receipts; you check them before saving. | [GitHub](https://github.com/Rexxall/obsidian-ai-accounting) |
+| **Japan Work Secretary** | Part-time shifts in Japan: pay by time band, a warning before the 28-hour student limit, calendar sync. | [Directory](https://community.obsidian.md/plugins/japan-work-secretary) · [GitHub](https://github.com/Rexxall/japan-work-secretary) |
+| **AI Accounting** | A multi-currency ledger in Markdown. The AI drafts entries from receipts; you check them before saving. | [Directory](https://community.obsidian.md/plugins/ai-accounting) · [GitHub](https://github.com/Rexxall/obsidian-ai-accounting) |
 
 AI features use your own key, with DeepSeek, Qwen, SiliconFlow, Kimi and Zhipu built in.
 
