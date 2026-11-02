@@ -9,15 +9,52 @@ I'm Rex. I studied clinical medicine and build the tools I use every day to read
 
 ## Obsidian plugins
 
-| Plugin | What it does | Get it |
-|---|---|---|
-| **Git Note History** | Browse a note's Git history, compare any two versions and restore one paragraph or the whole note. | [Directory](https://community.obsidian.md/plugins/git-note-history) · [GitHub](https://github.com/Rexxall/obsidian-git-history-view) |
-| **AI Assistant Suite** | An AI suggests a title, tags, a folder and tidier text for a note; you apply only what you accept. | [Directory](https://community.obsidian.md/plugins/ai-assistant-suite) · [GitHub](https://github.com/Rexxall/obsidian-ai-assistant-suite) |
-| **Polyglot Helper** | Look up English and Japanese words in your notes and get a study card with meaning, reading, examples and audio. | [Directory](https://community.obsidian.md/plugins/polyglot-helper) · [GitHub](https://github.com/Rexxall/obsidian-polyglot-helper) |
-| **Video Summary** | Turn video links, recordings and transcripts into notes with a summary, a timestamped transcript and key points. | [Directory](https://community.obsidian.md/plugins/video-summary) · [GitHub](https://github.com/Rexxall/obsidian-video-summary) |
-| **Pass Countdown** | Count down a multi-use pass: uses left, time left, and the latest moment to start the next one. | [Directory](https://community.obsidian.md/plugins/pass-countdown) · [GitHub](https://github.com/Rexxall/obsidian-pass-countdown) |
-| **Japan Work Secretary** | Part-time shifts in Japan: pay by time band, a warning before the 28-hour student limit, calendar sync. | [Directory](https://community.obsidian.md/plugins/japan-work-secretary) · [GitHub](https://github.com/Rexxall/japan-work-secretary) |
-| **AI Accounting** | A multi-currency ledger in Markdown. The AI drafts entries from receipts; you check them before saving. | [Directory](https://community.obsidian.md/plugins/ai-accounting) · [GitHub](https://github.com/Rexxall/obsidian-ai-accounting) |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/git-note-history"><img src="assets/plugins/git-note-history.jpg" width="100%" alt="A note's Git history: searching for a deleted sentence and opening the commit that removed it"></a>
+<br><b>Git Note History</b><br>Find a sentence you deleted, compare any two versions, restore one paragraph.<br>
+<a href="https://community.obsidian.md/plugins/git-note-history">Directory</a> · <a href="https://github.com/Rexxall/obsidian-git-history-view">GitHub</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/ai-assistant-suite"><img src="assets/plugins/ai-assistant-suite.jpg" width="100%" alt="Review list of AI suggestions for a meeting note, each with its own tick box"></a>
+<br><b>AI Assistant Suite</b><br>An AI suggests title, tags, folder and tidier text; you tick what to apply.<br>
+<a href="https://community.obsidian.md/plugins/ai-assistant-suite">Directory</a> · <a href="https://github.com/Rexxall/obsidian-ai-assistant-suite">GitHub</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/polyglot-helper"><img src="assets/plugins/polyglot-helper.jpg" width="100%" alt="Word card for 予想 with its reading and meaning, added to the word list"></a>
+<br><b>Polyglot Helper</b><br>Look up Japanese and English words in a note and keep them for review.<br>
+<a href="https://community.obsidian.md/plugins/polyglot-helper">Directory</a> · <a href="https://github.com/Rexxall/obsidian-polyglot-helper">GitHub</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/video-summary"><img src="assets/plugins/video-summary.jpg" width="100%" alt="A finished video note beside the Video Summary side panel"></a>
+<br><b>Video Summary</b><br>Video links and recordings into notes with a clickable, timestamped transcript.<br>
+<a href="https://community.obsidian.md/plugins/video-summary">Directory</a> · <a href="https://github.com/Rexxall/obsidian-video-summary">GitHub</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/japan-work-secretary"><img src="assets/plugins/japan-work-secretary.jpg" width="100%" alt="Add-shift dialog warning that the week would reach 32 hours"></a>
+<br><b>Japan Work Secretary</b><br>Part-time shifts in Japan, pay by time band, a warning before 28 hours.<br>
+<a href="https://community.obsidian.md/plugins/japan-work-secretary">Directory</a> · <a href="https://github.com/Rexxall/japan-work-secretary">GitHub</a>
+</td>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/ai-accounting"><img src="assets/plugins/ai-accounting.jpg" width="100%" alt="A receipt next to the two entries drafted from it, waiting for review"></a>
+<br><b>AI Accounting</b><br>Receipts into a multi-currency Markdown ledger, checked before saving.<br>
+<a href="https://community.obsidian.md/plugins/ai-accounting">Directory</a> · <a href="https://github.com/Rexxall/obsidian-ai-accounting">GitHub</a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://community.obsidian.md/plugins/pass-countdown"><img src="assets/plugins/pass-countdown.jpg" width="100%" alt="Pass panel: 44 of 52 left and the running pass with 6 days 23 hours left"></a>
+<br><b>Pass Countdown</b><br>Uses left, time left and the pace for a multi-use pass.<br>
+<a href="https://community.obsidian.md/plugins/pass-countdown">Directory</a> · <a href="https://github.com/Rexxall/obsidian-pass-countdown">GitHub</a>
+</td>
+<td></td>
+</tr>
+</table>
 
 AI features use your own key, with DeepSeek, Qwen, SiliconFlow, Kimi and Zhipu built in.
 
