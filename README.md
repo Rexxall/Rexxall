@@ -42,8 +42,8 @@
 <b>Pass Countdown</b> · <a href="https://github.com/Rexxall/obsidian-pass-countdown">code</a><br>Uses left, time left, and the pace to finish.
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/Rexxall/tasknotes-countdown"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/shelf/tasknotes-countdown-dark.png"><img src="assets/shelf/tasknotes-countdown-light.png" width="100%" alt="TaskNotes Countdown: deadlines from TaskNotes, and whether you will make it."></picture></a>
-<b>TaskNotes Countdown</b> · new<br>Deadlines from TaskNotes, and whether you will make it.
+<a href="https://community.obsidian.md/plugins/tasknotes-countdown"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/shelf/tasknotes-countdown-dark.png"><img src="assets/shelf/tasknotes-countdown-light.png" width="100%" alt="TaskNotes Countdown: deadlines from TaskNotes, and whether you will make it."></picture></a>
+<b>TaskNotes Countdown</b> · <a href="https://github.com/Rexxall/tasknotes-countdown">code</a><br>Deadlines from TaskNotes, and whether you will make it.
 </td>
 </tr>
 </table>
