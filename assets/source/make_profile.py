@@ -54,10 +54,11 @@ def tile(slug, accent, mode):
     card = Image.new("RGB", (W, H), top)
     shade = Image.linear_gradient("L").resize((W, H)).point(lambda v: v * 0.55)
     card.paste(base, (0, 0), shade)  # fades toward the card colour at the bottom
-    shot = Image.open(ROOT / "plugins" / f"{slug}.jpg").convert("RGB")
-    sw = 760
-    shot = shot.resize((sw, round(shot.height * sw / shot.width)), Image.LANCZOS)
-    x, y = (W - sw) // 2, 86
+    shot = Image.open(ROOT / "plugins" / f"{slug}-{mode}.jpg").convert("RGB")
+    scale = min(760 / shot.width, 430 / shot.height)  # fit inside the card, below the accent tab
+    sw, sh = round(shot.width * scale), round(shot.height * scale)
+    shot = shot.resize((sw, sh), Image.LANCZOS)
+    x, y = (W - sw) // 2, 82
     shadow = Image.new("L", (W, H), 0)
     ImageDraw.Draw(shadow).rounded_rectangle((x, y + 10, x + sw, y + shot.height + 10), 18, fill=90 if mode == "light" else 160)
     card.paste((20, 16, 40), (0, 0), shadow.filter(ImageFilter.GaussianBlur(20)))
