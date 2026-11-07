@@ -103,18 +103,35 @@ def wash(im, center, rx, ry, rgb, alpha=90, blur=40):
     im.paste(Image.new("RGB", im.size, rgb), (0, 0), m.filter(ImageFilter.GaussianBlur(blur)))
 
 
+def duotone(im, shadow, mid, high):
+    """Print the screenshot in two inks: black and one spot colour, on paper (risograph)."""
+    L = im.convert("L")
+    def lut(ch):
+        out = []
+        for v in range(256):
+            if v < 128:
+                t = v / 127; out.append(round(shadow[ch] + (mid[ch] - shadow[ch]) * t))
+            else:
+                t = (v - 128) / 127; out.append(round(mid[ch] + (high[ch] - mid[ch]) * t))
+        return out
+    return Image.merge("RGB", [L.point(lut(ch)) for ch in range(3)])
+
+
+def mix(a, b, t):
+    return tuple(round(x + (y - x) * t) for x, y in zip(a, b))
+
+
 def plate(slug, name, line, leader, roman):
     c = LIGHT
     a = ACCENT[slug]
     im = Image.new("RGB", (W, H), c["bg"])
-    wash(im, (330, 250), 330, 200, a, alpha=70, blur=48)
     d = ImageDraw.Draw(im)
     for y in (90, 280, 470):
         d.ellipse((22, y - 8, 38, y + 8), fill=c["hole"], outline=(196, 192, 183))
     d.text((70, 38), f"FIG. {roman}", font=font("didotb", 22), fill=a)
     spaced(d, (70 + d.textlength(f"FIG. {roman}", font=font("didotb", 22)) + 18, 46), "OBSIDIAN PLUGIN", font("futura", 11), c["mute"], 4.2)
     spaced(d, (W - 40, 44), f"ITH_PLATE_{roman}", font("futura", 9), c["mute"], 3, anchor="r")
-    s = shot(slug, "light", 520, 330)
+    s = duotone(shot(slug, "light", 520, 330), c["ink"], mix(a, c["bg"], 0.25), c["bg"])
     x, y = 70, 84
     im.paste(s, (x, y))
     rough_rect(d, (x - 6, y - 6, x + s.width + 6, y + s.height + 6), c["ink"], 2, seed=hash(slug) % 1000)
@@ -137,13 +154,12 @@ def still(slug, name, line, roman):
     c = DARK
     a = ACCENT[slug]
     im = Image.new("RGB", (W, H), c["bg"])
-    s = shot(slug, "dark", 820, 360)
+    # colour grade: shadows stay black, the light in the scene is the tool's colour
+    s = duotone(shot(slug, "dark", 820, 360), c["bg"], mix(a, (0, 0, 0), 0.2), mix(a, (255, 255, 255), 0.8))
     frame = Image.new("RGB", (W, 380), c["still"])
-    wash(frame, (W // 2, 190), 520, 230, a, alpha=120, blur=70)  # stage light in the tool's colour
     fx = (W - s.width) // 2
     frame.paste(s, (fx, 10))
     im.paste(frame, (0, 64))
-    wash(im, (W // 2, 500), 300, 60, a, alpha=60, blur=50)  # the light spills onto the caption
     noise = Image.effect_noise((W, 380), 18).convert("L").point(lambda v: 128 + (v - 128) // 3)
     im.paste(Image.new("RGB", (W, 380), (40, 40, 40)), (0, 64), noise.point(lambda v: max(0, v - 118)))
     d = ImageDraw.Draw(im)
@@ -171,7 +187,6 @@ def web(mode):
             x = 70 + i * 560
             rough_line(d, (x, 120), (x + 500, 120), c["ink"], 1, seed=10 + i)
             wa = WEB_ACCENT[i]
-            wash(im, (x + 240, 190), 260, 90, wa, alpha=60, blur=40); d = ImageDraw.Draw(im)
             d.text((x, 136), f"FIG. {r}", font=font("didotb", 13), fill=wa)
             d.text((x, 160), n, font=font("didot", 34), fill=c["ink"])
             d.text((x, 212), l, font=font("hand", 17), fill=c["mute"])
@@ -183,8 +198,8 @@ def web(mode):
         spaced(d, (40, 22), "SCENES X–XII · WEB", font("futura", 10), c["mute"], 3.5)
         for i, (n, l, r) in enumerate(apps):
             cx = 300 + i * 600
-            wash(im, (cx, 150), 280, 110, WEB_ACCENT[i], alpha=110, blur=60); d = ImageDraw.Draw(im)
             d.text((cx, 128), n, font=font("didot", 36), fill=c["ink"], anchor="mm")
+            d.line((cx - 32, 182, cx + 32, 182), fill=WEB_ACCENT[i], width=2)
             spaced(d, (cx, 160), l.upper(), font("futura", 9.5), tuple(min(255, v + 70) for v in WEB_ACCENT[i]), 2.4, anchor="m")
         d.text((Wd - 40, 288), "R.", font=font("snell", 22), fill=c["mute"], anchor="rs")
     return round_page(im, c["page"], 36)
