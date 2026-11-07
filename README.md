@@ -52,12 +52,14 @@ AI features use your own key, with DeepSeek, Qwen, SiliconFlow, Kimi and Zhipu b
 
 ### Web apps
 
-- **[Noesis Paper Reader](https://github.com/Rexxall/noesis-paper-companion)** · [open](https://rexxall.github.io/noesis-paper-companion/): read a paper in three passes and come out able to explain it.
-- **[Bunmyaku](https://github.com/Rexxall/bunmyaku-nihongo)**: turn any Japanese material into a local study desk.
-- **[Evidence Inbox](https://github.com/Rexxall/obsidian-evidence-inbox)**: save a public post into Obsidian with its text, images and source link.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/shelf/web-dark.png">
+  <img src="assets/shelf/web-light.png" width="100%" alt="Plates X to XII: Noesis Paper Reader, Bunmyaku, Evidence Inbox. Run in the browser, keep nothing.">
+</picture>
 
-### How I build
+[Noesis Paper Reader](https://github.com/Rexxall/noesis-paper-companion) · [open](https://rexxall.github.io/noesis-paper-companion/) &nbsp;·&nbsp; [Bunmyaku](https://github.com/Rexxall/bunmyaku-nihongo) &nbsp;·&nbsp; [Evidence Inbox](https://github.com/Rexxall/obsidian-evidence-inbox)
 
-Start from a real chore · keep data local, in Markdown and Git · follow the host app's theme.
-
-<sub>Chinese · Uyghur · English · Japanese</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/shelf/colophon-dark.png">
+  <img src="assets/shelf/colophon-light.png" width="100%" alt="How I build: start from a real chore, keep data local in Markdown and Git, follow the host app's theme. The tool proposes, you decide, undo always. Chinese, Uyghur, English, Japanese.">
+</picture>
