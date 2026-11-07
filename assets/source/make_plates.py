@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SUP = Path("/System/Library/Fonts/Supplemental")
 W, H = 900, 560
 PLUGINS = [  # slug, display, one line, leader label (what the plate points at), roman
-    ("git-note-history", "Git Note History", "Find a sentence you deleted. Take back only that part.", "one sentence back, not the file", "II"),
+    ("git-note-history", "Git Note History", "Find a sentence you deleted. Take back only that part.", "one sentence, not the file", "II"),
     ("ai-assistant-suite", "AI Assistant Suite", "AI suggests title, tags and folder. You tick what to apply.", "proposed, never applied", "III"),
     ("polyglot-helper", "Polyglot Helper", "Look up Japanese and English words, keep them for review.", "kept for review", "IV"),
     ("video-summary", "Video Summary", "A video link in, a finished note out.", "a note, not a transcript", "V"),
@@ -21,6 +21,12 @@ PLUGINS = [  # slug, display, one line, leader label (what the plate points at),
     ("pass-countdown", "Pass Countdown", "Uses left, time left, and the pace to finish.", "the pace to finish", "VIII"),
     ("tasknotes-countdown", "TaskNotes Countdown", "Deadlines from TaskNotes, and whether you will make it.", "will you make it", "IX"),
 ]
+ACCENT = {  # one colour per tool, taken from the piles: 蓝绿舞台光, 红光, 浓烈彩色, 深夜冷蓝
+    "git-note-history": (122, 90, 240), "ai-assistant-suite": (10, 132, 255), "polyglot-helper": (48, 176, 199), "video-summary": (255, 55, 95),
+    "japan-work-secretary": (255, 159, 10), "ai-accounting": (52, 199, 89), "pass-countdown": (94, 92, 230), "tasknotes-countdown": (191, 90, 242),
+}
+WEB_ACCENT = [(48, 176, 199), (255, 159, 10), (122, 90, 240)]
+PRINCIPLE_ACCENT = [(10, 132, 255), (52, 199, 89), (191, 90, 242)]
 LIGHT = dict(bg=(240, 239, 234), ink=(23, 22, 15), mute=(138, 134, 126), red=(200, 41, 28), hole=(217, 214, 206), page=(255, 255, 255))
 DARK = dict(bg=(5, 5, 6), ink=(239, 230, 214), mute=(122, 117, 109), red=(214, 58, 42), still=(16, 14, 14), page=(13, 17, 23))
 
@@ -90,13 +96,22 @@ def round_page(card, page_rgb, r=28):
     return page
 
 
+def wash(im, center, rx, ry, rgb, alpha=90, blur=40):
+    """A soft watercolour wash behind the specimen (红色晕染包住人, in the tool's colour)."""
+    m = Image.new("L", im.size, 0)
+    ImageDraw.Draw(m).ellipse((center[0] - rx, center[1] - ry, center[0] + rx, center[1] + ry), fill=alpha)
+    im.paste(Image.new("RGB", im.size, rgb), (0, 0), m.filter(ImageFilter.GaussianBlur(blur)))
+
+
 def plate(slug, name, line, leader, roman):
     c = LIGHT
+    a = ACCENT[slug]
     im = Image.new("RGB", (W, H), c["bg"])
+    wash(im, (330, 250), 330, 200, a, alpha=70, blur=48)
     d = ImageDraw.Draw(im)
     for y in (90, 280, 470):
         d.ellipse((22, y - 8, 38, y + 8), fill=c["hole"], outline=(196, 192, 183))
-    d.text((70, 38), f"FIG. {roman}", font=font("didotb", 22), fill=c["ink"])
+    d.text((70, 38), f"FIG. {roman}", font=font("didotb", 22), fill=a)
     spaced(d, (70 + d.textlength(f"FIG. {roman}", font=font("didotb", 22)) + 18, 46), "OBSIDIAN PLUGIN", font("futura", 11), c["mute"], 4.2)
     spaced(d, (W - 40, 44), f"ITH_PLATE_{roman}", font("futura", 9), c["mute"], 3, anchor="r")
     s = shot(slug, "light", 520, 330)
@@ -109,8 +124,8 @@ def plate(slug, name, line, leader, roman):
     rough_line(d, (px, py), (lx, ly), c["ink"], 1, seed=3)
     d.line((lx, ly, lx + 40, ly), fill=c["ink"], width=1)
     d.ellipse((px - 3, py - 3, px + 3, py + 3), fill=c["ink"])
-    spaced(d, (lx + 46, ly - 14), "WHAT IT DOES", font("futura", 10), c["ink"], 2.6)
-    d.text((lx + 46, ly + 2), leader, font=font("hand", 17), fill=c["ink"])
+    spaced(d, (lx + 46, ly - 14), "WHAT IT DOES", font("futura", 10), c["mute"], 2.6)
+    d.text((lx + 46, ly + 2), leader, font=font("hand", 17), fill=a)
     # name block, bottom
     d.text((68, 436), name, font=font("didot", 44), fill=c["ink"])
     d.text((70, 500), line, font=font("hand", 17), fill=c["mute"])
@@ -120,19 +135,22 @@ def plate(slug, name, line, leader, roman):
 
 def still(slug, name, line, roman):
     c = DARK
+    a = ACCENT[slug]
     im = Image.new("RGB", (W, H), c["bg"])
     s = shot(slug, "dark", 820, 360)
     frame = Image.new("RGB", (W, 380), c["still"])
+    wash(frame, (W // 2, 190), 520, 230, a, alpha=120, blur=70)  # stage light in the tool's colour
     fx = (W - s.width) // 2
     frame.paste(s, (fx, 10))
     im.paste(frame, (0, 64))
+    wash(im, (W // 2, 500), 300, 60, a, alpha=60, blur=50)  # the light spills onto the caption
     noise = Image.effect_noise((W, 380), 18).convert("L").point(lambda v: 128 + (v - 128) // 3)
     im.paste(Image.new("RGB", (W, 380), (40, 40, 40)), (0, 64), noise.point(lambda v: max(0, v - 118)))
     d = ImageDraw.Draw(im)
     spaced(d, (40, 30), f"SCENE {roman}", font("futura", 10), c["mute"], 3.5)
     spaced(d, (W - 40, 30), "REXXALL / OBSIDIAN", font("futura", 10), c["mute"], 3.5, anchor="r")
     d.text((W / 2, 492), name, font=font("didot", 40), fill=c["ink"], anchor="mm")
-    spaced(d, (W / 2, 520), line.upper(), font("futura", 10), c["mute"], 2.8, anchor="m")
+    spaced(d, (W / 2, 520), line.upper(), font("futura", 10), tuple(min(255, v + 70) for v in a), 2.8, anchor="m")
     d.text((W - 40, 548), "R.", font=font("snell", 22), fill=c["mute"], anchor="rs")
     return round_page(im, c["page"])
 
@@ -152,7 +170,9 @@ def web(mode):
         for i, (n, l, r) in enumerate(apps):
             x = 70 + i * 560
             rough_line(d, (x, 120), (x + 500, 120), c["ink"], 1, seed=10 + i)
-            d.text((x, 136), f"FIG. {r}", font=font("didotb", 13), fill=c["mute"])
+            wa = WEB_ACCENT[i]
+            wash(im, (x + 240, 190), 260, 90, wa, alpha=60, blur=40); d = ImageDraw.Draw(im)
+            d.text((x, 136), f"FIG. {r}", font=font("didotb", 13), fill=wa)
             d.text((x, 160), n, font=font("didot", 34), fill=c["ink"])
             d.text((x, 212), l, font=font("hand", 17), fill=c["mute"])
         d.text((Wd - 60, 270), "R.", font=font("snell", 28), fill=c["mute"], anchor="rs")
@@ -163,8 +183,9 @@ def web(mode):
         spaced(d, (40, 22), "SCENES X–XII · WEB", font("futura", 10), c["mute"], 3.5)
         for i, (n, l, r) in enumerate(apps):
             cx = 300 + i * 600
+            wash(im, (cx, 150), 280, 110, WEB_ACCENT[i], alpha=110, blur=60); d = ImageDraw.Draw(im)
             d.text((cx, 128), n, font=font("didot", 36), fill=c["ink"], anchor="mm")
-            spaced(d, (cx, 160), l.upper(), font("futura", 9.5), c["mute"], 2.4, anchor="m")
+            spaced(d, (cx, 160), l.upper(), font("futura", 9.5), tuple(min(255, v + 70) for v in WEB_ACCENT[i]), 2.4, anchor="m")
         d.text((Wd - 40, 288), "R.", font=font("snell", 22), fill=c["mute"], anchor="rs")
     return round_page(im, c["page"], 36)
 
@@ -179,7 +200,7 @@ def colophon(mode):
         rough_line(d, (70, 76), (1730, 76), c["ink"], 1, seed=21)
         for i, t in enumerate(["start from a real chore", "keep data local, in Markdown and Git", "follow the host app's theme", "the tool proposes · you decide · undo always"]):
             x = 70 + i * 440
-            fill = c["red"] if i == 3 else c["ink"]
+            fill = c["red"] if i == 3 else PRINCIPLE_ACCENT[i]
             d.text((x, 104), t, font=font("hand", 20), fill=fill)
         spaced(d, (70, 176), "CHINESE · UYGHUR · ENGLISH · JAPANESE", font("futura", 10), c["mute"], 3)
         d.text((Wd - 60, 196), "R.", font=font("snell", 28), fill=c["mute"], anchor="rs")
