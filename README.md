@@ -1,7 +1,9 @@
-<picture>
+<a href="https://rexxall.github.io/"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <img src="assets/banner-light.svg" width="100%" alt="Rex: trained as a doctor, now building the tools my notes were missing. The tool proposes, you decide, undo always.">
-</picture>
+</picture></a>
+
+<p align="center"><a href="https://rexxall.github.io/"><b>rexxall.github.io</b></a> · the whole shelf as one night shift, dusk to dawn</p>
 
 ### Obsidian plugins
 
