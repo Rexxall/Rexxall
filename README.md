@@ -53,12 +53,12 @@ AI features use your own key, with DeepSeek, Qwen, SiliconFlow, Kimi and Zhipu b
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/shelf/web-dark.png">
-  <img src="assets/shelf/web-light.png" width="100%" alt="Plates X to XII: Noesis Paper Reader, Bunmyaku, Evidence Inbox. Run in the browser, keep nothing.">
+  <img src="assets/shelf/web-light.png" width="100%" alt="Two web apps. Noesis: read a paper in three passes and come out able to explain it. Bunmyaku: turn any Japanese material into a local study desk.">
 </picture>
 
 [Noesis Paper Reader](https://github.com/Rexxall/noesis-paper-companion) · [open](https://rexxall.github.io/noesis-paper-companion/) &nbsp;·&nbsp; [Bunmyaku](https://github.com/Rexxall/bunmyaku-nihongo) &nbsp;·&nbsp; [Evidence Inbox](https://github.com/Rexxall/obsidian-evidence-inbox)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/shelf/colophon-dark.png">
-  <img src="assets/shelf/colophon-light.png" width="100%" alt="How I build: start from a real chore, keep data local in Markdown and Git, follow the host app's theme. The tool proposes, you decide, undo always. Chinese, Uyghur, English, Japanese.">
+  <img src="assets/shelf/colophon-light.png" width="100%" alt="How I build. Local, fast, at hand: if a feature slows the vault, the feature goes. The tool proposes, you decide, undo always: nothing lands in a note until you tick it. When to act, and when to hand back: not sure, don't guess; short of facts, count on the safe side.">
 </picture>
