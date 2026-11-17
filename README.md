@@ -12,13 +12,13 @@
 </td>
 <td width="50%" valign="top">
 <a href="https://community.obsidian.md/plugins/git-note-history"><img src="assets/cabinet/gnh.png" width="100%" alt="Git Note History: Find a sentence you deleted. Take back only that part."></a>
-<b>Git Note History</b> · <a href="https://github.com/Rexxall/obsidian-git-history-view">code</a><br>Find a sentence you deleted. Take back only that part.
+<b>Git Note History</b> · <a href="https://github.com/Rexxall/obsidian-git-history-view">code</a> · <a href="https://rexxall.github.io/git-note-history/">the page</a><br>Find a sentence you deleted. Take back only that part.
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <a href="https://community.obsidian.md/plugins/polyglot-helper"><img src="assets/cabinet/pg.png" width="100%" alt="Polyglot Helper: Look up a word where you read. Meet it again."></a>
-<b>Polyglot Helper</b> · <a href="https://github.com/Rexxall/obsidian-polyglot-helper">code</a><br>Look up a word where you read. Meet it again.
+<b>Polyglot Helper</b> · <a href="https://github.com/Rexxall/obsidian-polyglot-helper">code</a> · <a href="https://rexxall.github.io/polyglot-helper/">the page</a><br>Look up a word where you read. Meet it again.
 </td>
 <td width="50%" valign="top">
 <a href="https://community.obsidian.md/plugins/tasknotes-countdown"><img src="assets/cabinet/tnc.png" width="100%" alt="TaskNotes Countdown: Deadlines from TaskNotes, and whether you will make it."></a>
@@ -32,7 +32,7 @@
 </td>
 <td width="50%" valign="top">
 <a href="https://community.obsidian.md/plugins/ai-accounting"><img src="assets/cabinet/acc.png" width="100%" alt="AI Accounting: A receipt in, a checked ledger entry out."></a>
-<b>AI Accounting</b> · <a href="https://github.com/Rexxall/obsidian-ai-accounting">code</a><br>A receipt in, a checked ledger entry out.
+<b>AI Accounting</b> · <a href="https://github.com/Rexxall/obsidian-ai-accounting">code</a> · <a href="https://rexxall.github.io/ai-accounting/">the page</a><br>A receipt in, a checked ledger entry out.
 </td>
 </tr>
 <tr>
