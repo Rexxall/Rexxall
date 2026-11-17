@@ -1,0 +1,34 @@
+name: Profile wall
+on:
+  schedule:
+    - cron: "40 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wall
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install a browser
+        run: |
+          npm install --no-save playwright@1.64.1
+          npx playwright install --with-deps chromium
+      - name: Draw the wall from rexxall.github.io
+        run: node scripts/render.cjs
+      - name: Commit if the counts or layout changed
+        run: |
+          if git diff --quiet -- assets/wall/kit.json; then
+            echo "no change"; git checkout -- .; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/wall
+          git commit -m "Redraw the wall"
+          git push
