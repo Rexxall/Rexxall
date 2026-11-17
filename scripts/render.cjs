@@ -41,12 +41,12 @@ const esc = s => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, 
   kit.forEach(p => (rows[p.row] = rows[p.row] || []).push(p));
   const cell = p => {
     const href = p.repo ? `https://github.com/Rexxall/${p.repo}` : SITE + "#" + p.id;
-    const count = p.d ? `${p.d.toLocaleString("en-US")} downloads` : "web app";
+    const count = p.d ? `${p.d.toLocaleString("en-US")} downloads` : "Web app";
     const pct = (p.pct * 0.994).toFixed(2);
     return `<a href="${href}"><img src="assets/wall/${p.id}.png" width="${pct}%" alt="${esc(p.name)}: ${esc(p.line)} ${count}."></a>`;
   };
   const lines = [
-    `<a href="${SITE}"><picture><source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/wall/label-narrow-dark.png"><source media="(max-width: 600px)" srcset="assets/wall/label-narrow-light.png"><source media="(prefers-color-scheme: dark)" srcset="assets/wall/label-dark.png"><img src="assets/wall/label-light.png" width="100%" alt="Rex. Trained in medicine. Speaks Chinese, Uyghur, English and Japanese. Builds the small, local tools his own notes were missing. ${kit.filter(p => p.d).length} Obsidian plugins, ${total.toLocaleString("en-US")} downloads, 2 browser apps. rexxall.github.io"></picture></a>`,
+    `<a href="${SITE}"><picture><source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/wall/label-narrow-dark.png"><source media="(max-width: 600px)" srcset="assets/wall/label-narrow-light.png"><source media="(prefers-color-scheme: dark)" srcset="assets/wall/label-dark.png"><img src="assets/wall/label-light.png" width="100%" alt="I’m Rex. I trained in medicine and speak Chinese, English and Japanese. I build the small, local tools my own notes were missing: ${kit.filter(p => p.d).length} Obsidian plugins with ${total.toLocaleString("en-US")} downloads, and 2 browser apps. rexxall.github.io"></picture></a>`,
     "",
     `<p>${rows.map(r => r.map(cell).join("")).join("<br>")}</p>`,
     "",
@@ -54,7 +54,7 @@ const esc = s => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, 
     "",
     ...releases.map(r => `- [${r.name} ${r.tag}](https://github.com/Rexxall/${r.repo}/releases/tag/${encodeURIComponent(r.tag)}) · ${fmtDate(r.date)}`),
     "",
-    `<sub>Poster size follows downloads from Obsidian’s public stats file${fetched ? ", read " + fmtDate(fetched.slice(0, 10)) : ""}. A download is any install or update, not a person. More on <a href="${SITE}">rexxall.github.io</a>.</sub>`,
+    `<sub>The more downloads, the bigger the poster. Redrawn every morning from Obsidian’s stats file${fetched ? ", last on " + fmtDate(fetched.slice(0, 10)) : ""}. More on <a href="${SITE}">rexxall.github.io</a>.</sub>`,
     "",
   ];
   fs.writeFileSync(path.join(ROOT, "README.md"), lines.join("\n"));
