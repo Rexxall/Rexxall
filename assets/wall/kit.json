@@ -3,20 +3,20 @@
   {
    "id": "video-summary",
    "row": 0,
-   "pct": 39.67,
-   "d": 139
+   "pct": 38.56,
+   "d": 144
   },
   {
    "id": "ai-assistant-suite",
    "row": 0,
-   "pct": 30.89,
-   "d": 108
+   "pct": 33.67,
+   "d": 126
   },
   {
    "id": "git-note-history",
    "row": 0,
-   "pct": 29.44,
-   "d": 103
+   "pct": 27.78,
+   "d": 104
   },
   {
    "id": "ai-accounting",
@@ -39,40 +39,40 @@
   {
    "id": "pass-countdown",
    "row": 2,
-   "pct": 28,
+   "pct": 27.33,
    "d": 55
   },
   {
    "id": "tasknotes-countdown",
    "row": 2,
    "pct": 24.89,
-   "d": 49
+   "d": 50
   },
   {
    "id": "noesis",
    "row": 2,
-   "pct": 23.56,
+   "pct": 23.89,
    "d": 0
   },
   {
    "id": "bunmyaku",
    "row": 2,
-   "pct": 23.56,
+   "pct": 23.89,
    "d": 0
   }
  ],
  "releases": [
   {
+   "name": "Video Summary",
+   "tag": "2.14.1",
+   "date": "2026-11-17",
+   "repo": "obsidian-video-summary"
+  },
+  {
    "name": "AI Assistant Suite",
    "tag": "1.9.2",
    "date": "2026-11-17",
    "repo": "obsidian-ai-assistant-suite"
-  },
-  {
-   "name": "Video Summary",
-   "tag": "2.14.0",
-   "date": "2026-11-16",
-   "repo": "obsidian-video-summary"
   },
   {
    "name": "AI Accounting",
