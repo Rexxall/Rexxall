@@ -3,61 +3,61 @@
   {
    "id": "video-summary",
    "row": 0,
-   "pct": 38.56,
-   "d": 152
+   "pct": 38.67,
+   "d": 156
   },
   {
    "id": "ai-assistant-suite",
    "row": 0,
-   "pct": 34.56,
-   "d": 136
+   "pct": 34.11,
+   "d": 138
   },
   {
    "id": "git-note-history",
    "row": 0,
-   "pct": 26.89,
-   "d": 106
+   "pct": 27.22,
+   "d": 110
   },
   {
    "id": "ai-accounting",
    "row": 1,
-   "pct": 37.56,
-   "d": 101
+   "pct": 37.89,
+   "d": 103
   },
   {
    "id": "polyglot-helper",
    "row": 1,
-   "pct": 35.67,
+   "pct": 35.33,
    "d": 96
   },
   {
    "id": "japan-work-secretary",
    "row": 1,
    "pct": 26.78,
-   "d": 72
-  },
-  {
-   "id": "pass-countdown",
-   "row": 2,
-   "pct": 26.44,
-   "d": 56
+   "d": 73
   },
   {
    "id": "tasknotes-countdown",
    "row": 2,
-   "pct": 25.56,
-   "d": 54
+   "pct": 26.56,
+   "d": 58
+  },
+  {
+   "id": "pass-countdown",
+   "row": 2,
+   "pct": 25.67,
+   "d": 56
   },
   {
    "id": "noesis",
    "row": 2,
-   "pct": 24,
+   "pct": 23.89,
    "d": 0
   },
   {
    "id": "bunmyaku",
    "row": 2,
-   "pct": 24,
+   "pct": 23.89,
    "d": 0
   }
  ],
