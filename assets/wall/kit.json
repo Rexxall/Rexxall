@@ -3,20 +3,20 @@
   {
    "id": "video-summary",
    "row": 0,
-   "pct": 39.33,
-   "d": 167
+   "pct": 39,
+   "d": 168
   },
   {
    "id": "ai-assistant-suite",
    "row": 0,
-   "pct": 33.89,
+   "pct": 33.44,
    "d": 144
   },
   {
    "id": "git-note-history",
    "row": 0,
-   "pct": 26.78,
-   "d": 114
+   "pct": 27.56,
+   "d": 119
   },
   {
    "id": "ai-accounting",
@@ -39,25 +39,25 @@
   {
    "id": "tasknotes-countdown",
    "row": 2,
-   "pct": 27.22,
-   "d": 63
+   "pct": 27.78,
+   "d": 66
   },
   {
    "id": "pass-countdown",
    "row": 2,
-   "pct": 24.67,
-   "d": 57
+   "pct": 25.22,
+   "d": 60
   },
   {
    "id": "noesis",
    "row": 2,
-   "pct": 24.11,
+   "pct": 23.56,
    "d": 0
   },
   {
    "id": "bunmyaku",
    "row": 2,
-   "pct": 24,
+   "pct": 23.44,
    "d": 0
   }
  ],
